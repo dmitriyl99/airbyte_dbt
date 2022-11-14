@@ -3,7 +3,7 @@
 with covid_confirmed_by_date as (
     SELECT 
         date as date,
-        SUM(new_confirmed) as sum_of_confirmed
+        SUM(new_confirmed::INTEGER) as sum_of_confirmed
     FROM covid_epidemiology
     GROUP BY date
 )
