@@ -8,4 +8,4 @@ with covid_confirmed_by_date as (
     GROUP BY date
 )
 
-SELECT * FROM covid_confirmed_by_date;
+SELECT * FROM covid_confirmed_by_date
