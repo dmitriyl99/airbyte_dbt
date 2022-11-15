@@ -49,7 +49,7 @@ WITH source_data as (
             phone LIKE '99893%'
             or phone LIKE '99894%',
             TRUE,
-            gateway_status in ("Delivered", "Transmitted", null)
+            gateway_status in ("Delivered", "Transmitted") or gateway_status is NULL
           )
         )
     ) t
