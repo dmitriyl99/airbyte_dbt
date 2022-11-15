@@ -9,21 +9,21 @@ WITH source_data as (
   from (
       select (
           CASE
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) <= 70 THEN 1
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) > 70
             and CHAR_LENGTH(body) <= 140 THEN 2
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) > 140
             and CHAR_LENGTH(body) <= 210 THEN 3
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) > 210
             and CHAR_LENGTH(body) <= 280 THEN 4
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) > 280
             and CHAR_LENGTH(body) <= 350 THEN 5
-            WHEN body REGEXP "[а-яА-Я№]+"
+            WHEN body SIMILAR TO "[а-яА-Я№]+"
             and CHAR_LENGTH(body) > 350
             and CHAR_LENGTH(body) <= 420 THEN 6
             WHEN CHAR_LENGTH(body) <= 135 THEN 1
