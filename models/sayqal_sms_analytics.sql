@@ -25,7 +25,7 @@ from (select (CASE
       where gateway_id IN (4, 5)
         AND ((gateway_status in ('Delivered', 'Transmitted') or gateway_status is NULL) OR
              (phone LIKE '99893%' or phone LIKE '99894%'))) t
-GROUP BY sms_date;
+GROUP BY sms_date
 )
 
 SELECT * FROM source_data;
