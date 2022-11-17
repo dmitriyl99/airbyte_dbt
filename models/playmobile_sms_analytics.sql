@@ -22,7 +22,7 @@ from (select (CASE
                   WHEN CHAR_LENGTH(body) > 675 and CHAR_LENGTH(body) <= 810 then 6 END) AS sms_count,
              to_char(created_at, 'YYYY-MM')                                             AS sms_date,
              sms_logs_since_2022.tag_id
-      from sms_logs_since_2022
+      from service_notify_alifshop.sms_logs_since_2022
       where gateway_id IN (2, 7)
         AND ((gateway_status in ('Delivered', 'Transmitted') or gateway_status is NULL) OR
              (phone LIKE '99893%' or phone LIKE '99894%'))) t
