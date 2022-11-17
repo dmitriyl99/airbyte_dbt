@@ -29,4 +29,4 @@ from (select (CASE
 GROUP BY sms_date
 )
 
-SELECT * FROM source_data;
+SELECT * FROM source_data
